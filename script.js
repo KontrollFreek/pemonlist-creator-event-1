@@ -63,7 +63,7 @@ async function submitForm() {
     // send data to database
     try {
         console.log("Sending form data:", JSON.stringify(data))
-        const response = await fetch('http://localhost:3000/submit', {
+        const response = await fetch('/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -86,7 +86,7 @@ async function submitForm() {
 // get value of port from server.js
 async function getPort() {
     try {
-        const response = await fetch("http://localhost:3000/config"); // Replace with your backend URL
+        const response = await fetch("/config"); // Replace with your backend URL
         const result = await response.json();
         return result.port;
     } catch (error) {

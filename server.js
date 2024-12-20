@@ -10,6 +10,9 @@ app.use(cors())
 app.use(express.json())
 app.use(bodyParser.json())
 
+app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
+app.use('/', express.static(__dirname))
+
 // store submission in database
 app.post("/submit", async (req, res) => {
     let client
